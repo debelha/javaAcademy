@@ -1,4 +1,0 @@
-item: Qtd: Nome: Preço: SubTotal:
-1 2 Notebook 4999,00 9998,00
-2 3 Calça Jeans 149,99 449,97
-Total: 10447,97
