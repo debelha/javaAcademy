@@ -1,0 +1,137 @@
+-- DDL
+create table regioes
+(
+	id serial primary key,
+	nome varchar(70) not null
+);
+
+create table grupos
+(
+	id serial primary key,
+	nome varchar(30) not null
+);
+
+create table eras 
+(
+	id serial primary key,
+	nome varchar(30) not null
+);
+
+create table descobridores 
+(
+	id serial primary key,
+	nome varchar(80)
+);
+
+create table dinossauros
+(
+	id serial primary key,
+	nome varchar(70) not null,
+	toneladas integer not null,
+	ano_descoberta integer not null, 
+	fk_grupo integer,
+	fk_descobridor integer, 
+	fk_era integer,
+	inicio integer,
+	fim integer,
+	fk_regiao integer,
+	foreign key (fk_grupo) references grupos(id),
+	foreign key (fk_descobridor) references descobridores(id),
+	foreign key (fk_era) references eras(id),
+	foreign key (fk_regiao) references regioes(id)
+);
+
+--DML
+
+-- ADICIONNDO REGIÕES
+insert into regioes(nome) values ('Mongólia');
+insert into regioes(nome) values ('Canadá');
+insert into regioes(nome) values ('Tanzânia');
+insert into regioes(nome) values ('China');
+insert into regioes(nome) values ('América do Norte');
+insert into regioes(nome) values ('USA')
+
+-- ADICIONANDO DESCOBRIDORES 
+insert into descobridores(nome) values ('Maryanska');
+insert into descobridores(nome) values ('Jhon Bell');
+insert into descobridores(nome) values ('Cientistas Alemães');
+insert into descobridores(nome) values ('Museu Americano de História Natural');
+insert into descobridores(nome) values ('Othniel Charles Marsh');
+insert into descobridores(nome) values ('Barnum Brown')
+
+-- ADICIONANDO GRUPOS 
+insert into grupos(nome) values ('Anquilossauros');
+insert into grupos(nome) values ('Ceratopsídeos');
+insert into grupos(nome) values ('Estegossauros');
+insert into grupos(nome) values ('Terápodes')
+
+-- ADICIONANDO ERAS
+insert into eras(nome) values ('Cretáceo');
+insert into eras(nome) values ('Jurássico')
+
+-- ADICIONANDO DINOSSAUROS
+insert into dinossauros(nome,toneladas,ano_descoberta,fk_grupo,fk_descobridor,fk_era,fk_regiao,inicio,fim) values ('Saichania',4,1977,1,6,1,1,145,66);
+insert into dinossauros(nome,toneladas,ano_descoberta,fk_grupo,fk_descobridor,fk_era,fk_regiao,inicio,fim) values ('Tricerátops',6,1887,2,7,1,2,70,66);
+insert into dinossauros(nome,toneladas,ano_descoberta,fk_grupo,fk_descobridor,fk_era,fk_regiao,inicio,fim) values ('Kentrossauro',2,1909,3,8,2,3,201,145);
+insert into dinossauros(nome,toneladas,ano_descoberta,fk_grupo,fk_descobridor,fk_era,fk_regiao,inicio,fim) values ('Pinacossauro',6,1909,1,9,1,4,85,75);
+insert into dinossauros(nome,toneladas,ano_descoberta,fk_grupo,fk_descobridor,fk_era,fk_regiao,inicio,fim) values ('Alossauro',3,1877,4,11,4,6,155,150);
+insert into dinossauros(nome,toneladas,ano_descoberta,fk_grupo,fk_descobridor,fk_era,fk_regiao,inicio,fim) values ('Torossauro',8,1891,2,9,3,6,67,65);
+insert into dinossauros(nome,toneladas,ano_descoberta,fk_grupo,fk_descobridor,fk_era,fk_regiao,inicio,fim) values ('Anquilossauro',8,1906,1,6,2,5,66,63)
+
+-- CONSULTAS
+select * from dinossauros
+select * from descobridores
+select * from eras
+
+select nome from dinossauros
+
+select nome, toneladas from dinossauros order by nome
+
+select * from dinossauros, grupos where dinossauros.fk_grupo = grupos.id
+
+select dinossauros.nome, grupos.nome from dinossauros, grupos where dinossauros.fk_grupo = grupos.id
+
+-- CONSULTAS ADAPTANDO A EXIBIÇÃO DA INFORMAÇÃO (SEM USAR JOIN)
+select dinossauros.id, dinossauros.nome, dinossauros.toneladas, dinossauros.ano_descoberta, grupos.nome, descobridores.nome, eras.nome, dinossauros.inicio, dinossauros.fim, regioes.nome
+from dinossauros, grupos, descobridores, eras, regioes
+where dinossauros.fk_grupo = grupos.id and dinossauros.fk_descobridor = descobridores.id
+and dinossauros.fk_era = eras.id and dinossauros.fk_regiao = regioes.id
+order by dinossauros.nome
+
+select dinossauros.id, dinossauros.nome, dinossauros.toneladas, dinossauros.ano_descoberta, grupos.nome, descobridores.nome, eras.nome, dinossauros.inicio, dinossauros.fim, regioes.nome
+from dinossauros, grupos, descobridores, eras, regioes
+where dinossauros.fk_grupo = grupos.id and dinossauros.fk_descobridor = descobridores.id
+and dinossauros.fk_era = eras.id and dinossauros.fk_regiao = regioes.id
+order by dinossauros.nome
+
+
+-- INNER JOIN
+
+-- SEM USAR
+select * from dinossauros, grupos where dinossauros.fk_grupo = grupos.id
+
+-- USANDO
+select * from dinossauros inner join grupos on dinossauros.fk_grupo = grupo.id 
+
+-- SEM USAR 
+select dinossauros.id, dinossauros.nome, dinossauros.toneladas, dinossauros.ano_descoberta, grupos.nome, descobridores.nome, eras.nome, dinossauros.inicio, dinossauros.fim, regioes.nome
+from dinossauros, grupos, descobridores, eras, regioes
+where dinossauros.fk_grupo = grupos.id and dinossauros.fk_descobridor = descobridores.id
+and dinossauros.fk_era = eras.id and dinossauros.fk_regiao = regioes.id
+order by dinossauros.nome
+
+-- USANDO
+select * from dinossauros
+join grupos on dinossauros.fk_grupo = grupos.id
+join descobridores on dinossauros.fk_descobridor = descobridores.id
+join eras on dinossauros.fk_era = eras.id
+join regioes on dinossauros.fk_regiao = regioes.id
+order by dinossauros.nome
+
+-- USANDO ADAPTANDO OS NOMES EXIBIDOS
+select dinossauros.nome, dinossauros.toneladas, dinossauros.ano_descoberta, grupos.nome as Grupo, descobridores.nome as Descobridor, eras.nome as Era, dinossauros.inicio, dinossauros.fim, regioes.nome as Região
+join grupos on dinossauros.fk_grupo = grupos.id
+join descobridores on dinossauros.fk_descobridor = descobridores.id
+join eras on dinossauros.fk_era = eras.id
+join regioes on dinossauros.fk_regiao = regioes.id
+order by dinossauros.nome
