@@ -7,5 +7,8 @@ public class Main {
 
         Cachorro cachorro = new Cachorro();
         cachorro.fazerBarulho();
+
+        cachorro.andar();
+        cachorro.andar("Cachorro andando diferente");
     }
 }
