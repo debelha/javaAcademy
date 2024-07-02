@@ -12,7 +12,7 @@
         <property name="hibernate.show_sql">true</property>
 
         <!-- Mapeamento de classe/entidades -->
-        <mapping class="hibernate.Model.Departamento"/>
-        <mapping class="hibernate.Model.Funcionario"/>
+        <mapping class="Model.Departamento"/>
+        <mapping class="Model.Funcionario"/>
     </session-factory>
 </hibernate-configuration>
