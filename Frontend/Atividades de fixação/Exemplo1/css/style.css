@@ -1,0 +1,27 @@
+body /*seletor*/
+            {
+                background-color: lightblue; /* propriedade:valor;*/
+                color: black;
+                background-image: url('../images/bg.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                font-size: 12pt; 
+            }
+ 
+            h2
+            {
+                font-family: 'Trebuchet', 'Lucinda Sans Unicode', 'Lucinda Grande', 'Lucida'; /*tipo fonte*/
+                font-style: italic; /*estilo da fonte*/
+                font-weight: 900; /*largura da fonte*/
+                font-size: 12pt; /*tamanho da fonte com base no elemento pai*/
+                font-size: 200%; /*porcentagem calculada com base tamanho declarado no body*/
+            }
+
+            p {
+                font-family: 'Courier New', Courier, monospace; /*tipo fonte*/
+                text-indent: 30px; /*espaço do parágrafo*/
+                text-align: justify; /*tipo de identação*/
+                letter-spacing: 2px; /*distancia entre as letras*/
+                text-transform: lowercase; /*deixa todas as letras em caixa baixa*/
+                text-transform: uppercase; /*deixa todas as letras em caixa alta*/
+            }
