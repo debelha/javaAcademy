@@ -13,7 +13,7 @@
     <body>
         <form action="login" method="post">
 
-            <label for="email">Email:</label>
+            <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required/>
                 <br>
 

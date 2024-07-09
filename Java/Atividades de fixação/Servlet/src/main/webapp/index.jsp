@@ -5,8 +5,8 @@
     <title>Servlet Login</title>
 </head>
 <body>
-<h1>Minha Página de Login com Servlet</h1>
+<h1>Página de login</h1>
 <br/>
-<a href="login.jsp">Fazer login:</a>
+<a href="login.jsp">Clique aqui para fazer o login</a>
 </body>
 </html>
