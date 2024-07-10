@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script src="/js/javascript.html"></script>
+    <script>
+        
+        //variáveis
+        var teste = "teste";
+        teste = 1;
+        teste = "1" + 1;
+        teste = true;
+        alert(teste); 
+
+        undefined; //indefinido 
+        null; //nulo
+
+        let nome = "Deborah"
+        alert(`Olá, ${nome}!`);
+
+        var n1 = 10;
+        var n2 = 10.5;
+        var n3 = 10.5e3;
+        var n4 = 0xff;
+
+        var s1 = "teste";
+        var s2 = "teste";
+
+        var b1 = true;
+        var b2 = false;
+
+        var u = undefined;
+        var n = null; 
+
+        var obj = {
+            id: 5,
+            nome: "Fulano"
+        };
+
+        var array = ["lista", "de", "elementos"]; //array
+
+        var func = function(y, x) {return x + y; };
+
+        //CONDICIONAIS
+
+        var numero = 1;
+
+        //verifica valor
+        if(numero == 1){
+            console.log("Número é igual a 1");
+        }
+
+        //verifica valor
+        if(numero == "1"){
+            console.log("Número é igual a 1");
+        }
+
+        //verifica valor e tipo
+        if(numero == 1){
+            console.log("Número é igual a 1");
+        }
+
+        //operador ternário 
+        var bool = (numero === "1");
+        var resultado = (numero === "1")?"iguais":"diferentes";
+        console.log("Operador ternário: " + resultado);
+
+        var resultado = (numero === "1")?"iguais":"diferente";
+        console.log("Operador ternário: " + resultado);  
+ 
+        var aux = "";
+        if(numero === "1")
+        {
+            aux = "iguais";
+        }
+        else
+        {
+            aux = "diferente";
+        }
+ 
+        console.log("If/Else: " + aux);
+ 
+        var laranjas = 6;
+        switch(laranjas)
+        {
+            case 3:
+                console.log("Faça 1 copo de suco!");
+                break;
+            case 6:
+                console.log("Faça 2 copo de suco!");
+                break;
+            case 9:
+                console.log("Faça uma jara de suco!");
+                break;
+            default:
+                console.log("Faça quanto suco conseguir!");
+        }
+
+        var pessoas = ["João", "José", "Maria", "Carlos", "Joana"];
+        for(var i = 0; i < pessoas.length; i++)
+        {
+            console.log(pessoas[i]);
+        }
+
+        var nomes = "";
+        var pessoa = { nome: "Igor", sobrenome: "Silva", idade: 22};
+        for(x in pessoa)
+        {
+            nomes += pessoa[x];
+        }
+ 
+        console.log(nomes);
+ 
+
+    </script>
+</head>
+
+<body>
+    Aula de JavaScript
+<button onclick="alert('Olá mundo!');">Clique aqui</button> 
+</body>
+
+</html>
