@@ -5,9 +5,9 @@
 </head>
 <body>
 
-<h1>Couldn't find your e-mail in database. Try again!</h1>
+<h1>Couldn't find ${email} in database. Try again!</h1>
 
-<a href="login.jsp">Login</a>
+<a href="index.jsp">Login</a>
 
 </body>
 </html>
