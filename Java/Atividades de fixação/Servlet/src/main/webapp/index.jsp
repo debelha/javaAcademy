@@ -1,12 +1,21 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Servlet Login</title>
+    <title>Login</title>
 </head>
 <body>
-<h1>Página de login</h1>
-<br/>
-<a href="login.jsp">Clique aqui para fazer o login</a>
+<form action="login" method="post">
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required/>
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required/>
+    <br>
+
+    <button type="submit">Login</button>
+</form>
 </body>
+</html>
 </html>
