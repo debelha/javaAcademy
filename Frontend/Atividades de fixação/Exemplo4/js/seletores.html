@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seletores JavaScript</title>
-    <script src="script.js"></script>
+    <script>
+        function minhaFuncao()
+        {
+            var x = document.getElementById('nome');
+            console.log(x.value);
+            x.value = x.value.toUpperCase();
+            console.log(x.value);
+            alert(x.value);
+        }
+    </script>
 </head>
 <body>
     <div>
         <h2>Seletores JavaScript</h2>
+        <h2>Seletores JavaScript</h2>
         <br>
-        <input type="text"/>
+        Nome: <input id="nome" type="text"/>
         <br>
         <br>
-        <button id="botao1">Botão 1</button><br><br>
-        <button id="botao2">Botão 2</button><br><br>
-        <button id="botao3">Botão 3</button><br><br>
+        <button id="botao1" class="botoes" onclick="minhaFuncao()" >Botão 1</button><br><br>
+        <button id="botao2" class="botoes">Botão 2</button><br><br>
+        <button id="botao3" class="botoes">Botão 3</button><br><br>
     </div>
 </body>
 </html>
