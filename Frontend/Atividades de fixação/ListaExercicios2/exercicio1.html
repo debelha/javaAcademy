@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    <h2>Insira seu nome e idade</h2>
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="age">Idade:</label>
+    <input type="text" id="age" name="age"><br><br>
+    <button onclick="showMessage()">Enviar</button>
+    <p id="message"></p>
+
+    <script>
+        function showMessage() {
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const message = `${name} tem ${age} anos`;
+            document.getElementById("message").textContent = message;
+        }
+    </script>
+    
+</body>
+</html>
